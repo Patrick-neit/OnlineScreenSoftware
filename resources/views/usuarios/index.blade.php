@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<link href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css" rel="stylesheet">
     <section class="section">
         <div class="section-header">
             <h3 class="page__heading">Usuarios</h3>
@@ -14,7 +15,7 @@
 
                             <a class="btn btn-warning" href="{{route('usuarios.create')}}">New User</a>
 
-                            <table class="table table-striped mt-2">
+                            <table id= "example" class="table table-striped mt-2">
                                 <thead style="background-color: #6777ef;">
                                     <th style="display:none;">ID</th>
                                     <th style="color: #fff;">Nombre</th>
@@ -56,6 +57,19 @@
                 </div>
             </div>
         </div>
+
+        <script src="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css"> </script>
+        <script src="https://code.jquery.com/jquery-3.5.1.js"> </script>
+
+
+
+        <script>
+
+        $(document).ready(function() {
+            $('#example').DataTable();
+        } );
+
+    </script>
     </section>
 @endsection
 
